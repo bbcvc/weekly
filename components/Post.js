@@ -32,7 +32,7 @@ export default function Post (props) {
       )}>
         {post.title}
       </h1>
-      {post.type[0] !== 'Page' && (
+      {/* {post.type[0] !== 'Page' && (
         <nav className={cn(
           'w-full flex mt-7 items-start text-gray-500 dark:text-gray-400',
           { 'max-w-2xl px-4': !fullWidth }
@@ -61,7 +61,7 @@ export default function Post (props) {
             </div>
           )}
         </nav>
-      )}
+      )} */}
       <div className="self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">
         {!fullWidth && <div className="flex-1 hidden lg:block" />}
         <div className={fullWidth ? 'flex-1 pr-4' : 'flex-none w-full max-w-2xl px-4'}>
