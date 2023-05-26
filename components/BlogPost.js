@@ -37,7 +37,7 @@ const BlogPost = ({ post }) => {
         data-alt={post.title}
         src={post.Cover}
         alt=""
-        className="lozad block md:w-80 md:h-48 w-96 h-52 rounded-t-md"
+        className="lozad block md:w-80 md:h-48 w-96 h-52 rounded-t-md object-cover"
       />
       <div
         className="w-full flex justify-between items-center leading-tight pt-4 pl-3 pr-3"
