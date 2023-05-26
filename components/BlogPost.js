@@ -45,11 +45,9 @@ const BlogPost = ({ post }) => {
         <div className="text-gray-800 max-h-[20px]">{post.title}</div>
         <div className="text-grey-darker text-sm text-gray-600">{post.date}</div>
       </div>
-      <p
+      <div
         className="text-gray-600 text-sm md:w-78 w-94 overflow-hidden pt-2.5 line-clamp-2 px-3 w-full h-12"
-      >
-        {post.summary}
-      </p>
+      >{post.summary}</div>
     </Link>
   )
 }
