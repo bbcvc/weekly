@@ -30,7 +30,7 @@ const BlogPost = ({ post }) => {
       href={`${BLOG.path}/${post.slug}`}
       data-placeholder-background="linear-gradient(to bottom, #ece9e6, #ffffff)"
       alt=""
-      className="lozad block md:w-80 md:h-48 w-96 h-52 rounded-t-md"
+      className="pb-3 md:mt-5 mt-4 md:mr-5 flex flex-col justify-center rounded-b-md shadow-md overflow-hidden mx-auto md:w-80 w-96"
     >
       <img
         data-placeholder-background="linear-gradient(to bottom, #ece9e6, #ffffff)"
@@ -42,7 +42,7 @@ const BlogPost = ({ post }) => {
       <div
         className="w-full flex justify-between items-center leading-tight pt-4 pl-3 pr-3"
       >
-        <div className="text-gray-800">{post.title}</div>
+        <div className="text-gray-800 max-h-[20px]">{post.title}</div>
         <div className="text-grey-darker text-sm text-gray-600">{post.date}</div>
       </div>
       <p
