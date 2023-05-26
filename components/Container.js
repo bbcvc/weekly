@@ -66,18 +66,22 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
         )}
       </Head>
       <div
-        className={`wrapper ${BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
+        // className={`wrapper ${BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
+        className={`flex flex-col justify-between min-h-screen ${BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
           }`}
       >
         <Header
           navBarTitle={layout === 'blog' ? meta.title : null}
           fullWidth={fullWidth}
         />
-        <main className={cn(
+        {/* <main className={cn(
           'flex-grow transition-all',
           layout !== 'blog' && ['self-center px-4', fullWidth ? 'md:px-24' : 'w-full max-w-2xl']
-        )}>
-          {children}
+        )}> */}
+        <main className='mx-auto -mt-5 mb-12 xl:max-w-7xl w-full lg:max-w-5xl md:max-w-2xl max-w-xl md:box-border box-content md:px-0 px-3 flex-1'>
+          <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mx-0 md:-mr-5 mr-0'>
+            {children}
+          </div>
         </main>
         <Footer fullWidth={fullWidth} />
       </div>

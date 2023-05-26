@@ -8,7 +8,8 @@ import { useConfig } from '@/lib/config'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
-  const postsToShow = posts.slice(0, clientConfig.postsPerPage)
+  // const postsToShow = posts.slice(0, clientConfig.postsPerPage)
+  const postsToShow = posts
   const totalPosts = posts.length
   const showNext = totalPosts > clientConfig.postsPerPage
   return {
@@ -25,11 +26,13 @@ export default function Blog ({ postsToShow, page, showNext }) {
   const { title, description } = useConfig()
 
   return (
-    <Container title={title} description={description}>
-      {postsToShow.map(post => (
-        <BlogPost key={post.id} post={post} />
-      ))}
-      {showNext && <Pagination page={page} showNext={showNext} />}
-    </Container>
+    <>
+      <Container title={title} description={description}>
+        {postsToShow.map(post => (
+          <BlogPost key={post.id} post={post} />
+        ))}
+      </Container>
+      {/* {showNext && <Pagination page={page} showNext={showNext} />} */}
+    </>
   )
 }
