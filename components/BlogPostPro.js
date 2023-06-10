@@ -23,7 +23,9 @@ const BlogPost = ({ post }) => {
         className="w-full flex justify-between items-center leading-tight pt-4 pl-3 pr-3"
       >
         <div className="text-gray-800 max-h-[20px]">{post.title}</div>
-        <div className="text-grey-darker text-sm text-gray-600">{FormattedDate(FormattedDate)}</div>
+        <div className="text-grey-darker text-sm text-gray-600">
+          <FormattedDate date={post.date} />
+        </div>
       </div>
       <div
         className="text-gray-600 text-sm md:w-78 w-94 overflow-hidden pt-2.5 line-clamp-2 px-3 w-full h-12"
