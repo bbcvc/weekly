@@ -7,6 +7,7 @@ import { useLocale } from '@/lib/locale'
 import { useConfig } from '@/lib/config'
 import { createHash } from 'crypto'
 import Container from '@/components/Container'
+import ContainerPro from '@/components/ContainerPro'
 import Post from '@/components/Post'
 import Comments from '@/components/Comments'
 

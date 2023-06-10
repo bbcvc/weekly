@@ -1,7 +1,7 @@
 import { clientConfig } from '@/lib/server/config'
 
-import Container from '@/components/Container'
-import BlogPost from '@/components/BlogPost'
+import Container from '@/components/ContainerPro'
+import BlogPost from '@/components/BlogPostPro'
 import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import { useConfig } from '@/lib/config'
