@@ -6,7 +6,7 @@ import { getAllPosts, getPostBlocks } from '@/lib/notion'
 import { useLocale } from '@/lib/locale'
 import { useConfig } from '@/lib/config'
 import { createHash } from 'crypto'
-import Containers from '@/components/Containers'
+import Container from '@/components/Container'
 import Post from '@/components/Post'
 import Comments from '@/components/Comments'
 
@@ -21,7 +21,7 @@ export default function BlogPost ({ post, blockMap, emailHash }) {
   const fullWidth = post.fullWidth ?? false
 
   return (
-    <Containers
+    <Container
       layout="blog"
       title={post.title}
       description={post.summary}
@@ -66,7 +66,7 @@ export default function BlogPost ({ post, blockMap, emailHash }) {
       </div>
 
       <Comments frontMatter={post} />
-    </Containers>
+    </Container>
   )
 }
 
