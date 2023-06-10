@@ -29,14 +29,17 @@ export default function Blog ({ postsToShow, page, showNext }) {
 
   return (
     <>
-      <Container title={title} description={description}>
+      <Container title={title} description={description} nextPage={showNext && (
+          <div className='mt-4 w-full flex justify-end'>
+           <Pagination page={page} showNext={showNext} />
+          </div>
+        )}
+      >
         {postsToShow.map(post => (
           <BlogPost key={post.id} post={post} />
         ))}
-        <div className='mt-4 w-full flex justify-end col-span-3'>
-          {showNext && <Pagination page={page} showNext={showNext} />}
-        </div>
       </Container>
+
     </>
   )
 }

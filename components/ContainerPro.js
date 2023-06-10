@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import cn from 'classnames'
 // import BlogPost from './BlogPost'
 
-const Container = ({ children, layout, fullWidth, ...customMeta }) => {
+const Container = ({ children, nextPage, layout, fullWidth, ...customMeta }) => {
   const BLOG = useConfig()
 
   const url = BLOG.path.length ? `${BLOG.link}/${BLOG.path}` : BLOG.link
@@ -67,7 +67,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
       </Head>
       <div
         // className={`wrapper ${BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
-        className={`flex flex-col justify-between min-h-screen ${BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
+        className={`flex flex-col justify-between ${BLOG.font === 'serif' ? 'font-serif' : 'font-sans'
           }`}
       >
         <Header
@@ -82,6 +82,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mx-0 md:-mr-5 mr-0'>
             {children}
           </div>
+          {nextPage}
         </main>
         <Footer fullWidth={fullWidth} />
       </div>
