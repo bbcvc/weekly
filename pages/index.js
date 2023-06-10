@@ -8,8 +8,10 @@ import { useConfig } from '@/lib/config'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
-  // const postsToShow = posts.slice(0, clientConfig.postsPerPage)
-  const postsToShow = posts
+  console.log('posts', posts);
+
+  const postsToShow = posts.slice(0, clientConfig.postsPerPage)
+  // const postsToShow = posts
   const totalPosts = posts.length
   const showNext = totalPosts > clientConfig.postsPerPage
   return {
@@ -31,8 +33,10 @@ export default function Blog ({ postsToShow, page, showNext }) {
         {postsToShow.map(post => (
           <BlogPost key={post.id} post={post} />
         ))}
+        <div className='mt-4 w-full flex justify-end col-span-3'>
+          {showNext && <Pagination page={page} showNext={showNext} />}
+        </div>
       </Container>
-      {/* {showNext && <Pagination page={page} showNext={showNext} />} */}
     </>
   )
 }
